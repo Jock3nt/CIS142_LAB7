@@ -2,7 +2,7 @@
 
 int main() {
 
-    employee napka1("employee.csv", "newemployee.csv");
+    employee napka1("employees.csv", "newemployee.csv");
 
     napka1.readFromFile();
     napka1.writeToFile();
@@ -10,5 +10,4 @@ int main() {
 
     cout << "New employee CSV file created successfully." << endl;
 
-    return 0;
 }

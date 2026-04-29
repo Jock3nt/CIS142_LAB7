@@ -8,6 +8,14 @@ using namespace std;
 employee::employee(string infile, string outfile) {
     empIn.open(infile);
     empOut.open(outfile);
+
+    if (!empIn.is_open()) {
+        cout << "Input file failed to open!" << endl;
+    }
+
+    if (!empOut.is_open()) {
+        cout << "Output file failed to open!" << endl;
+    }
 }
 
 void employee::readFromFile() {
@@ -35,10 +43,13 @@ void employee::readFromFile() {
 
 void employee::writeToFile() {
     for (int i = 0; i < emp.size(); i++) {
-        string fullName = emp[i][1] + " " + emp[i][0];
+    string fullname = emp[i][1] + " " + emp[i][0];
 
-        empOut << fullName << ", " << emp[i][2] << ", " << emp[i][3] << ", " << emp[i][4] << endl;
-    }
+    empOut << fullname << ","
+           << emp[i][2] << ","
+           << emp[i][3] << ","
+           << emp[i][4] << endl;
+}
 }
 
 void employee::addToRow(string value) {
